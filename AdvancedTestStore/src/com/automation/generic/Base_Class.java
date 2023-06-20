@@ -54,32 +54,30 @@ public class Base_Class implements Framework_Constants
 		driver.get(ReadDataFromProperty.getProperty("url"));
 		login_page=new Login_Page(driver);
 		login_page.loginlink().click();
-//		login_page.continuebutton().click();
-//		login_page.firstname().sendKeys(ReadDataFromProperty.getProperty("fname"));
-//		login_page.lastname().sendKeys(ReadDataFromProperty.getProperty("lname"));
-//		login_page.email_add().sendKeys(ReadDataFromProperty.getProperty("email"));
-//		login_page.address().sendKeys(ReadDataFromProperty.getProperty("address1"));
-//		login_page.city().sendKeys(ReadDataFromProperty.getProperty("cityname"));
-//		Utility_Methods.select_dropdown(login_page.country()).selectByVisibleText("India");
-//		Utility_Methods.select_dropdown(login_page.state()).selectByVisibleText("Karnataka");
-//		login_page.zipcode().sendKeys(ReadDataFromProperty.getProperty("postcode"));
-//		login_page.loginname().sendKeys(ReadDataFromProperty.getProperty("username"));
-//		login_page.password().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
-//		login_page.passwordconfirm().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
-//		login_page.agree_check().click();
-//		login_page.login_button().click();
+		login_page.continuebutton().click();
+		login_page.firstname().sendKeys(ReadDataFromProperty.getProperty("fname"));
+		login_page.lastname().sendKeys(ReadDataFromProperty.getProperty("lname"));
+		login_page.email_add().sendKeys(ReadDataFromProperty.getProperty("email"));
+		login_page.address().sendKeys(ReadDataFromProperty.getProperty("address1"));
+		login_page.city().sendKeys(ReadDataFromProperty.getProperty("cityname"));
+		Utility_Methods.select_dropdown(login_page.country()).selectByVisibleText("India");
+		Utility_Methods.select_dropdown(login_page.state()).selectByVisibleText("Karnataka");
+		login_page.zipcode().sendKeys(ReadDataFromProperty.getProperty("postcode"));
+		login_page.loginname().sendKeys(ReadDataFromProperty.getProperty("username"));
+		login_page.password().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
+		login_page.passwordconfirm().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
+		login_page.agree_check().click();
+		login_page.login_button().click();
 //		Utility_Methods.ActionsClass(driver).moveToElement(login_page.useracct()).perform();
 //		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(login_page.actlogout()));
 //		login_page.actlogout().click();
 //		Thread.sleep(3000);
 //		login_page.loginlink().click();
-		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(login_page.username()));	
-		Thread.sleep(2000);
-		login_page.username().sendKeys(ReadDataFromProperty.getProperty("uname"));
-		login_page.userpswd().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
-		login_page.login().click();
-		
-		
+//		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(login_page.username()));	
+//		Thread.sleep(2000);
+//		login_page.username().sendKeys(ReadDataFromProperty.getProperty("uname"));
+//		login_page.userpswd().sendKeys(ReadDataFromProperty.getProperty("newpassword"));
+//		login_page.login().click();		
 
 	}
 	
