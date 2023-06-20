@@ -23,20 +23,17 @@ public class TestScript_1 extends Base_Class
 	@Test
 	public void script() throws InterruptedException
 	{
-		
-		SoftAssert sftAssrt= new SoftAssert();
 		// Verifying Welcome Page with Account Details -> Clicking on SkinCare-> Eyes 
 		AccountDetails act=new AccountDetails(driver);
+		SoftAssert sftAssrt= new SoftAssert();
 		String Expected_name="Anupama";
 		String Actual_name=act.myaccount().getText();
-		System.out.println(Actual_name);
-		System.out.println("********");
 		sftAssrt.assertEquals(Actual_name, Expected_name);
-		//Assert.assertEquals(, false);
 		test.log(Status.INFO, "Account Name verified");
 		Utility_Methods.ActionsClass(driver).moveToElement(act.skincare()).perform();
 		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(act.eyes()));
 		act.eyes().click();
+		
 		// On Product list Page, clicking on product to see details, then clicking on Add to Cart	
 		ProductDetails pDetails= new ProductDetails(driver);
 		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(pDetails.absoluteeye()));
@@ -44,13 +41,12 @@ public class TestScript_1 extends Base_Class
 		pDetails.absoluteeye().click();
 		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(pDetails.absoluteprice()));
 		String sExpectedProductPrice=pDetails.absoluteprice().getText();
-		pDetails.absoluteaddtocart().click();
-		Thread.sleep(10000);	
-		// On Cart page, clicking on Checkout Page to continue, verifying the details in Payments Page
+		pDetails.absoluteaddtocart().click();	
+		
+		// On Cart page, clicking on Checkout button to continue, then on Payments Page, verifying the Added item and total amount
 		ShoppingCart sCart= new ShoppingCart(driver);
 		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(sCart.checkout()));
 		sCart.checkout().click();
-		Thread.sleep(6000);
 		Utility_Methods.ExplicitWait(driver).until(ExpectedConditions.visibilityOf(sCart.absolutetext()));
 		String sActualProductName=sCart.absolutetext().getText();
 		sftAssrt.assertEquals(sExpectedProductName, sActualProductName);
